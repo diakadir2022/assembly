@@ -1,0 +1,31 @@
+section.data
+exploit_string do 'A', 0 buffer tines 64 db o
+section ,text
+global start
+; Exit now eax, 1
+xor ebx, ebx
+int 8x80
+May 20
+scaylla@scaylla
+exalei
+/ Null-terntnated string
+; 64 byte buffer
+; Fill buffer to triggered overflow
+now est, exploit string
+; source
+now edi, bbuffer
+; Destination
+now ecx, 64
+; Stze
+rep novsb
+; Copy bytes
+; write buffer to stdout (fd =1)
+; syscall number for sys urite
+now eax, 4
+; file descriptor 1 = stdout
+now ebx, 1
+; pointer to buffer
+now ecx, buffer
+; nurber of bytes to write
+now edx, 64
+; Invoke syscalt
